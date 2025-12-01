@@ -1,7 +1,13 @@
-import { useExtracted } from 'next-intl'
+import { useExtracted, useTranslations } from 'next-intl'
 
 export default function Page() {
   const t = useExtracted()
+  const m = useTranslations()
 
-  return t('Hello intl!')
+  return (
+    <div>
+      {t('Hello intl!')}
+      {m('bye')}
+    </div>
+  )
 }
